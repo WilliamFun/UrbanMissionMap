@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="880dp"
+        android:layout_height="520dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="编队设置"
+                android:layout_marginStart="400dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="17dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="monospace"/>
+
+            <Button
+                android:id="@+id/btn_addformation"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="300dp"
+                android:background="@color/royalblue"
+                android:text="@string/add"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="250dp" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_formation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </ScrollView>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="矩形编队示例"
+                    android:layout_marginStart="150dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="12dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="三角形编队示例"
+                    android:layout_marginStart="150dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="12dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rectangle"/>
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/triangle"/>
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/legend"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="长机"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="monospace"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="备份长机"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="monospace"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="僚机"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

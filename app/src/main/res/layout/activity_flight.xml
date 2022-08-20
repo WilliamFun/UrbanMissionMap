@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/wellcome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blackblue">
+
+        <ImageButton
+            android:id="@+id/logo_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/team_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/team_icon" />
+
+        <Spinner
+            android:id="@+id/sp_team"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+        <ImageView
+            android:id="@+id/plane_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/plane_icon" />
+
+        <Spinner
+            android:id="@+id/sp_plane"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:spinnerMode="dropdown" />
+
+        <ImageView
+            android:id="@+id/bee_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bee" />
+
+        <TextView
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bee_icon"
+            android:gravity="center"
+            android:text="@string/app_title"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <ImageButton
+            android:id="@+id/btn_setting"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="250dp"
+            android:background="@drawable/setting_main"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <egolabsapps.basicodemine.offlinemap.Views.OfflineMapView
+            android:id="@+id/Flight_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_alignParentBottom="true"
+            app:zoomLevel="15"/>
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/control_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="类型"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="编队类型"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="飞机地址"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="目标航点"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="状态"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/plane_type"
+                    android:layout_width="24dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="3dp"
+                    android:text="僚机"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/formation_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="3dp"
+                    android:text="三角形"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/plane_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="55dp"
+                    android:layout_marginTop="3dp"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/froward_waypoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="3dp"
+                    android:text="5"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/plane_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginTop="3dp"
+                    android:text="飞行中"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:typeface="monospace" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="310dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="40dp"
+                android:layout_height="42dp"
+                android:background="@drawable/control_background">
+
+                <TextView
+                    android:id="@+id/btn_formationgone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="编队"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/ll_formationnew"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:background="@drawable/control_background">
+
+                <ImageView
+                    android:id="@+id/team10"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_1_0"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team11"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_1_1"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team20"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_2_0"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team21"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_2_1"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team30"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="96dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_3_0"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team31"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="96dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_3_1"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team40"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="139dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_4_0"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team41"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="139dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_3_1"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team50"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="182dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_5_0"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/team51"
+                    android:layout_width="33dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="182dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/team_5_1"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/btn_addteam"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="182dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/add_team" />
+
+                <ImageButton
+                    android:id="@+id/btn_deleteteam"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="225dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/delete_team" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="230dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="730dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/control_background"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/btn_waypoint"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/waypoint_selector"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <ToggleButton
+                android:id="@+id/btn_attack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/attack_selector"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <ToggleButton
+                android:id="@+id/btn_nofly"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/nofly_selector"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <Button
+                android:id="@+id/btn_manyou"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/pointer1" />
+
+            <ToggleButton
+                android:id="@+id/btn_mapselect"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/mapselect_selector"
+                android:textOff="@null"
+                android:textOn="@null" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_waypoint"
+            android:layout_width="80dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="700dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/control_background"
+            android:visibility="gone">
+            <Button
+                android:id="@+id/waypoint_delete"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/delete_team"/>
+            <Button
+                android:id="@+id/waypoint_more"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/more"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_attack"
+            android:layout_width="180dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="782dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/control_background"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/attack_1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:background="@drawable/attack_icon"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/attack_2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:background="@drawable/attack_icon"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/attack_3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:background="@drawable/attack_icon"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/attack_4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:background="@drawable/attack_icon"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/attack_more"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/more"/>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_takeoff"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="165dp"
+            android:background="@drawable/btn_takeoff" />
+
+        <LinearLayout
+            android:layout_width="456dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="460dp"
+            android:background="@drawable/control_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/aim_distance" />
+
+                <TextView
+                    android:id="@+id/aim_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="1023.2m"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/speed_icon" />
+
+                <TextView
+                    android:id="@+id/plane_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="12.3m/s"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/location1" />
+
+                <TextView
+                    android:id="@+id/plane_longitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="109.834377"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/plane_latitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="40.654434"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/height1" />
+
+                <TextView
+                    android:id="@+id/plane_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="123.2m"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/leader_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="125.2m"
+                    android:textColor="@color/cyan"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="270dp"
+            android:layout_height="190dp"
+            android:layout_marginLeft="690dp"
+            android:layout_marginTop="350dp">
+
+            <Button
+                android:id="@+id/btn_videogone"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/video_togone"
+                android:visibility="visible"/>
+
+            <VideoView
+                android:id="@+id/video_player"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"/>
+
+            <Button
+                android:id="@+id/btn_videoshow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginLeft="240dp"
+                android:background="@drawable/video_gone"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/hide_control"
+            android:layout_width="15dp"
+            android:layout_height="155dp"
+            android:layout_marginLeft="845dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/control_background"
+            android:clickable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/detial_2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/show_control"
+            android:layout_width="15dp"
+            android:layout_height="155dp"
+            android:layout_marginLeft="945dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/control_background"
+            android:clickable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_control"
+            android:layout_width="100dp"
+            android:layout_height="155dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="860dp"
+            android:background="@drawable/control_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:text="航线"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ImageButton
+                    android:id="@+id/waypoint_route"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/waypoint_yes" />
+
+                <ImageButton
+                    android:id="@+id/waypoint_upload"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/waypoint_download" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:text="目标"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ImageButton
+                    android:id="@+id/attack_upload"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/aim_out" />
+
+                <ImageButton
+                    android:id="@+id/btn_startattack"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/aim_attack" />
+            </LinearLayout>
+            <View
+                android:layout_width="88dp"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:layout_marginLeft="7dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="集结"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ToggleButton
+                    android:id="@+id/swarm_switch"
+                    android:layout_width="35dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/swarm_selector"
+                    android:textOff="@null"
+                    android:textOn="@null" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:text="速度"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ImageButton
+                    android:id="@+id/speed_down"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/speed_down" />
+
+                <ImageButton
+                    android:id="@+id/speed_add"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/speed_add"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:text="修高"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ImageButton
+                    android:id="@+id/height_yes"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/waypoint_yes" />
+
+                <ImageButton
+                    android:id="@+id/height_no"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/height_no"/>
+            </LinearLayout>
+            <View
+                android:layout_width="88dp"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:layout_marginLeft="7dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:text="遥测"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ToggleButton
+                    android:id="@+id/telemetry_switch"
+                    android:layout_width="35dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/swarm_selector"
+                    android:textOff="@null"
+                    android:textOn="@null" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="300dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/control_background">
+
+                <TextView
+                    android:id="@+id/receive_sourcecode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="接收源码显示："
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_receivesourcecode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/control_background">
+
+                <TextView
+                    android:id="@+id/receive_string"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="350dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/control_background">
+
+                <TextView
+                    android:id="@+id/send_sourcecode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发送源码显示："
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sendsourcecode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/control_background">
+
+                <TextView
+                    android:id="@+id/send_string"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

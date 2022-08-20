@@ -1,0 +1,4 @@
+include ':UDP'
+include ':offlinemap'
+include ':app'
+rootProject.name = "UrbanMissionMap"

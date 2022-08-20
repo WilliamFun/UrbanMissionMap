@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_modify"
+        android:orderInCategory="1"
+        android:title="修改该飞机"/>
+
+    <item
+        android:id="@+id/menu_delete"
+        android:orderInCategory="2"
+        android:title="删除该飞机"/>
+    
+</menu>

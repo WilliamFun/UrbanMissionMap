@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lightgrey">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/wellcome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blackblue">
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/logo"/>
+
+        <ImageView
+            android:id="@+id/bee_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="300dp"
+            android:background="@drawable/bee"/>
+
+        <TextView
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bee_icon"
+            android:gravity="center"
+            android:text="@string/app_title"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:typeface="monospace"/>
+
+        <ImageButton
+            android:id="@+id/btn_setting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="290dp"
+            android:background="@drawable/setting"
+            android:clickable="true"
+            android:focusable="true" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <RadioGroup
+            android:id="@+id/leftRg"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@color/myblack"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/rbUAV"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/click_uavsetting_selector"
+                android:layout_height="45dp"
+                android:layout_width="44dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbFormation"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/click_formationsetting_selector"
+                android:layout_height="45dp"
+                android:layout_width="44dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="8dp"/>
+
+            <RadioButton
+                android:id="@+id/rbSystem"
+                android:button="@null"
+                android:drawableTop="@drawable/click_systemsetting_selector"
+                android:layout_height="45dp"
+                android:layout_width="44dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="8dp"/>
+        </RadioGroup>
+
+        <fragment
+            android:id="@+id/fragement_uavsetting"
+            android:name="buaa.uavswarm.urbanmissionmap.fragment.FragmentUAVSetting"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+        <fragment
+            android:id="@+id/fragement_formationsetting"
+            android:name="buaa.uavswarm.urbanmissionmap.fragment.FragmentFormationSetting"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+        <fragment
+            android:id="@+id/fragement_systemsetting"
+            android:name="buaa.uavswarm.urbanmissionmap.fragment.FragmentSystemSetting"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+        <fragment
+            android:id="@+id/fragement_adduav"
+            android:name="buaa.uavswarm.urbanmissionmap.fragment.FragmentAddUAV"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+        <fragment
+            android:id="@+id/fragement_uavdetail"
+            android:name="buaa.uavswarm.urbanmissionmap.fragment.FragmentUAVDetail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+        <fragment
+            android:id="@+id/fragement_addformation"
+            android:name="buaa.uavswarm.urbanmissionmap.fragment.FragmentAddFormation"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+        <fragment
+            android:id="@+id/fragement_formationdetail"
+            android:name="buaa.uavswarm.urbanmissionmap.fragment.FragmentFormationDetail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+    </LinearLayout>
+</LinearLayout>

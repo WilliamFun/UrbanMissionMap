@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/wellcome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blackblue">
+
+        <ImageButton
+            android:id="@+id/logo_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/logo"/>
+
+        <ImageView
+            android:id="@+id/bee_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="300dp"
+            android:background="@drawable/bee"/>
+
+        <TextView
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bee_icon"
+            android:gravity="center"
+            android:text="@string/app_title"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:typeface="monospace"/>
+
+        <ImageButton
+            android:id="@+id/btn_setting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="290dp"
+            android:background="@drawable/setting"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Spinner
+                android:id="@+id/sp_baseformation"
+                android:layout_width="290dp"
+                android:layout_height="35dp"
+                android:gravity="center_vertical|center"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/shape_chart"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="438dp"
+            android:layout_height="290dp"
+            android:background="@drawable/wellcome"
+            android:layout_gravity="center">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="262dp"
+                android:layout_height="53dp"
+                android:gravity="center"
+                android:background="@color/blackblue"
+                android:text="@string/start"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

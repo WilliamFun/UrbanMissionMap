@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UrbanMissionMap.iml" filepath="$PROJECT_DIR$/.idea/modules/UrbanMissionMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UDP/UrbanMissionMap.UDP.iml" filepath="$PROJECT_DIR$/.idea/modules/UDP/UrbanMissionMap.UDP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UrbanMissionMap.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UrbanMissionMap.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/offlinemap/UrbanMissionMap.offlinemap.iml" filepath="$PROJECT_DIR$/.idea/modules/offlinemap/UrbanMissionMap.offlinemap.iml" />
+    </modules>
+  </component>
+</project>

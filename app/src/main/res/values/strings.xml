@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">UrbanMissionMap</string>
+    <string name="app_title">城市蜂群无人机指控平台</string>
+    <string name="start">开始</string>
+    <string name="uavsetting">无人机设置</string>
+    <string name="add">添加</string>
+    <string name="ipset_empty">编队设置中没有无人机，点击添加按钮添加</string>
+    <string name="newuav">新增无人机</string>
+    <string name="meter">米</string>
+    <string name="x_distence">编队默认间距X方向</string>
+    <string name="z_distance">编队默认间距Z方向</string>
+    <string name="launch_delay">发射默认延迟</string>
+    <string name="s">秒</string>
+    <string name="escape_delay">脱离默认延迟</string>
+    <string name="save">保存</string>
+    <string name="upload">上传</string>
+</resources>
